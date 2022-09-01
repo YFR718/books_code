@@ -14,6 +14,7 @@ print(msr)
 
 # build a dic for word frequency
 f = Counter()
+longgest = 0
 with open(msr,encoding="utf-8") as src:
     for line in src:
         line = line.strip()
@@ -48,8 +49,10 @@ def plot(token_counts, title='MSR语料库词频统计', ylabel='词频'):
 
 word_freq = f.most_common(30)
 print(word_freq)
+print(len(f.keys()))
 plot(word_freq)
 log_word_freq = []
 for w, f in word_freq:
     log_word_freq.append((w, np.log(f)))
 plot(log_word_freq, ylabel='词频的对数')
+

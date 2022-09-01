@@ -12,7 +12,8 @@ def load_dictionary():
     # use ioutil
     IOUtil = JClass('com.hankcs.hanlp.corpus.io.IOUtil')
     # config dictionary path
-    path = HanLP.Config.CoreDictionaryPath.replace('.txt', '.mini.txt')
+    # path = HanLP.Config.CoreDictionaryPath.replace('.txt', '.mini.txt')
+    path = HanLP.Config.CoreDictionaryPath.replace('.txt', '.txt')
     # load dictionary
     dic = IOUtil.loadDictionary([path])
     return set(dic.keySet())
